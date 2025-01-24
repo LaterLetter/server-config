@@ -16,3 +16,10 @@ scrape_configs:
         labels:
           job: docker
           __path__: /var/lib/docker/containers/*/*.log
+  - job_name: mail-sending-service
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: mail-sending-service
+          __path__: /var/log/mail-sending-service/*.log
